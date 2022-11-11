@@ -205,7 +205,7 @@ def plt_normals(footPC,norms):
 
 # Read in files
 # only read .asc files for this work
-fPath = 'C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\Aetrex Object Files\\python_files\\'
+fPath = 'C:\\Users\\daniel.feeney\\Boa Technology Inc\\PFL Team - General\\Aetrex Object Files\\python_files\\'
 fileExt = r".npy"
 entries = [fName for fName in os.listdir(fPath) if fName.endswith(fileExt)]
 
@@ -348,7 +348,7 @@ for ii in range(len(entries)):
         elapsed = time.time()-t
         print(elapsed)
         
-        # plt.scatter(*zip(*foot_outline))
+        #conplt.scatter(*zip(*foot_outline))
     except:
             print(entries[ii])
 
