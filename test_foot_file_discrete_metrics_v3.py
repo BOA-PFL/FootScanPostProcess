@@ -28,8 +28,8 @@ def viz3d(PC):
     ax.set_zlabel('Z-axis')
     
 def create_foot_outline(footPC,outline_height):
-    idx = point_cloud[:,2] < outline_height
-    foot_low = point_cloud[idx,0:2]
+    idx = footPC[:,2] < outline_height
+    foot_low = footPC[idx,0:2]
     
     test_shape = alphashape.alphashape(foot_low,100)
     
@@ -205,7 +205,7 @@ def plt_normals(footPC,norms):
 
 # Read in files
 # only read .asc files for this work
-fPath = 'C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\Data\\Aetrex Object Files\\python_files\\'
+fPath = 'C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\BigData\\FootScan Data\\Aetrex Object Files\\python_files\\'
 fileExt = r".npy"
 entries = [fName for fName in os.listdir(fPath) if fName.endswith(fileExt)]
 
@@ -344,7 +344,7 @@ for ii in range(len(entries)):
         
         store_HAC.append(HAC)
         
-        store_fname.append(entries[ii][:-8])
+        store_fname.append(entries[ii][:-9])
         elapsed = time.time()-t
         print(elapsed)
         
@@ -364,7 +364,7 @@ outcomes = pd.DataFrame({ 'Name_Side':list(store_fname),
         
 
 if save_on == 1:         
-    outcomes.to_csv('C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\Data\\Aetrex Object Files\\python_files\\SummaryMetrics.csv',header=True,index=False)    
+    outcomes.to_csv(fPath + 'SummaryMetrics.csv',header=True,index=False)    
 
 
 # Visualize the point cloud:

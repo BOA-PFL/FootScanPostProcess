@@ -14,7 +14,7 @@ import pywavefront
 import os
 #______________________________________________________________________________
 # Read in files
-fPath = 'C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\Data\\Aetrex Object Files\\'
+fPath = 'C:\\Users\\eric.honert\\Boa Technology Inc\\PFL Team - General\\BigData\\FootScan Data\\Aetrex Object Files\\'
 fileExt = r'.obj'
 entries = [fName for fName in os.listdir(fPath) if fName.endswith(fileExt)]
 #______________________________________________________________________________
